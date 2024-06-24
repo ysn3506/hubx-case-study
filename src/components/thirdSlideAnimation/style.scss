@@ -1,0 +1,113 @@
+.transition-appear {
+	transform: translateY(250px);
+	transition: transform 450ms ease-in;
+	opacity: 0;
+}
+
+.transition-appear-active {
+	transform: translateY(200px);
+	transition: transform 450ms ease-in;
+	opacity: 0;
+}
+
+.transition-enter {
+	transform: translateY(150px);
+	transition: transform 450ms ease-in;
+}
+.transition-enter-active {
+	transform: translateY(100px);
+	transition: transform 450ms ease-in;
+}
+
+.transition-enter-done {
+	transform: translateY(80px);
+	transition: transform 450ms ease-in;
+}
+.transition-exit {
+	transform: translateY(50px);
+	transition: transform 450ms ease-in;
+}
+.transition-exit-active {
+	transform: translateY(0px);
+	transition: transform 450ms ease-in;
+}
+
+.transition-exit-done {
+	transform: translateY(0px);
+	transition: transform 450ms ease-in;
+}
+
+.second-slide-animation-wrapper {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	.main-image {
+		width: 85% !important;
+		margin: 2rem auto 0;
+	}
+
+	.inside-first {
+		opacity: 0;
+		position: absolute;
+		bottom: 0;
+		transform: translateY(150px);
+		width: 70% !important;
+		&.loaded {
+			opacity: 1;
+			transform: scale(0.8, 0.8) translateY(-40px);
+			transition:
+				opacity 1ms ease-in-out 450ms,
+				300ms ease-in-out 450ms;
+		}
+	}
+	.inside-second {
+		opacity: 0;
+		position: absolute;
+		bottom: 0;
+		width: 70% !important;
+		transform: translateY(150px);
+		&.loaded {
+			opacity: 1;
+			transform: scale(0.9, 0.9) translateY(-20px);
+			transition:
+				opacity 1ms ease-in-out 600ms,
+				transform 300ms ease-in-out 600ms;
+		}
+	}
+
+	.inside-third {
+		opacity: 0;
+		transform: scale(0) translateY(50px);
+		position: absolute;
+		bottom: 0;
+		width: 70% !important;
+		transform: translateY(150px);
+		&.loaded {
+			opacity: 1;
+			transform: translateY(0);
+			transition:
+				opacity 1ms ease-in-out 750ms,
+				transform 300ms ease-in-out 750ms;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.second-slide-animation-wrapper {
+		.inside-first {
+			width: 82% !important;
+			&.loaded {
+				transform: scale(0.8, 0.8) translateY(-70px);
+			}
+		}
+		.inside-second {
+			width: 82% !important;
+			&.loaded {
+				transform: scale(0.9, 0.9) translateY(-30px);
+			}
+		}
+		.inside-third {
+			width: 82% !important;
+		}
+	}
+}

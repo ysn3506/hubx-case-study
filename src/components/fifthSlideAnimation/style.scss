@@ -1,0 +1,122 @@
+.transition-appear {
+	transform: translateY(250px);
+	transition: transform 450ms ease-in;
+	opacity: 0;
+}
+
+.transition-appear-active {
+	transform: translateY(200px);
+	transition: transform 450ms ease-in;
+	opacity: 0;
+}
+
+.transition-enter {
+	transform: translateY(150px);
+	transition: transform 450ms ease-in;
+}
+.transition-enter-active {
+	transform: translateY(100px);
+	transition: transform 450ms ease-in;
+}
+
+.transition-enter-done {
+	transform: translateY(80px);
+	transition: transform 450ms ease-in;
+}
+.transition-exit {
+	transform: translateY(50px);
+	transition: transform 450ms ease-in;
+}
+.transition-exit-active {
+	transform: translateY(0px);
+	transition: transform 450ms ease-in;
+}
+
+.transition-exit-done {
+	transform: translateY(0px);
+	transition: transform 450ms ease-in;
+}
+
+.second-slide-animation-wrapper {
+	display: flex;
+	position: relative;
+	.main-image {
+		width: 85% !important;
+		margin: 2rem auto 0;
+	}
+
+	.fifth-left-image {
+		position: absolute;
+		position: absolute;
+		left: -1rem;
+		top: 12rem;
+		width: 5.2rem !important;
+		opacity: 0;
+		transform: translate(20px, 50px);
+
+		&.loaded {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				opacity 250ms ease-in-out 450ms,
+				transform 250ms ease-in-out 450ms;
+		}
+	}
+	.fifth-middle-image {
+		position: absolute;
+		left: 5rem;
+		top: 11.75rem;
+		width: 4.2rem !important;
+		opacity: 0;
+		transform: translateY(50px);
+
+		&.loaded {
+			opacity: 1;
+			transform: translateY(0);
+			transition:
+				opacity 250ms ease-in-out 600ms,
+				transform 250ms ease-in-out 600ms;
+		}
+	}
+
+	.fifth-right-image {
+		position: absolute;
+		right: -1rem;
+		top: 12rem;
+		width: 5.2rem !important;
+		opacity: 0;
+		transform: translate(-20px, 50px);
+		&.loaded {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition:
+				opacity 250ms ease-in-out 750ms,
+				transform 250ms ease-in-out 750ms;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.second-slide-animation-wrapper {
+		margin-bottom: 0;
+		.main-image {
+			width: 22.5vw !important;
+		}
+
+		.fifth-left-image {
+			left: -4rem;
+			top: 21rem;
+			width: 9rem !important;
+		}
+		.fifth-middle-image {
+			left: 35%;
+			top: 20rem;
+			width: 7.5rem !important;
+		}
+		.fifth-right-image {
+			right: -3.5rem;
+			top: 21.5rem;
+			width: 9rem !important;
+		}
+	}
+}
