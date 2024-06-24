@@ -1,5 +1,5 @@
-import styles from './App.module.css';
-import LandingPage from './pages/landing-page';
+import LandingPage from "./pages/landing-page";
+import "./App.module.css";
 
 export function App() {
   return (

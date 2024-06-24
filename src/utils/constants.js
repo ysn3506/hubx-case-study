@@ -1,3 +1,3 @@
 export default CONSTANTS = {
-    animationDuration:1000
-}
+	animationDuration: 1000,
+};

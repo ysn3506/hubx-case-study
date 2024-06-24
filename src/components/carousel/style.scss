@@ -1,116 +1,116 @@
 .slider-wrapper {
-	width: 100vw;
-	height: 124px;
-	overflow: scroll;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	-ms-overflow-style: none; /* for Internet Explorer, Edge */
-	scrollbar-width: none; /* for Firefox */
-	position: absolute;
-	z-index: 99;
+  width: 100vw;
+  height: 124px;
+  overflow: scroll;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  position: absolute;
+  z-index: 99;
 
-	&::-webkit-scrollbar {
-		display: none; /* for Chrome, Safari, and Opera */
-	}
+  &::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 
-	.slide-wrapper {
-		min-width: 301px;
-		height: 100%;
-		background-color: white;
-		gap: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 2rem 1rem;
-		border-right: 1px solid rgba(0, 0, 0, 0.16);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  .slide-wrapper {
+    min-width: 301px;
+    height: 100%;
+    background-color: white;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 
-		.icon-wrapper {
-			width: 56px;
-			height: 56px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: relative;
-			background-color: white;
-			img {
-				position: absolute;
-			}
-		}
+    .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-color: white;
+      img {
+        position: absolute;
+      }
+    }
 
-		.slide-explanation {
-			span {
-				font-size: 1.25rem;
-			}
-		}
+    .slide-explanation {
+      span {
+        font-size: 1.25rem;
+      }
+    }
 
-		&.active {
-			background-color: rgba(3, 129, 255, 0.03);
+    &.active {
+      background-color: rgba(3, 129, 255, 0.03);
 
-			.circular-progress {
-				--size: 64px;
-				--half-size: calc(var(--size) / 2);
-				--stroke-width: 2px;
-				--radius: calc((var(--size) - var(--stroke-width)) / 2);
-				--circumference: calc(var(--radius) * pi * 2);
-				--dash: calc((var(--progress) * var(--circumference)) / 100);
-				animation: progress-animation 1s linear;
-				circle {
-					cx: var(--half-size);
-					cy: var(--half-size);
-					r: var(--radius);
-					stroke-width: var(--stroke-width);
-					fill: none;
-					stroke-linecap: round;
-				}
+      .circular-progress {
+        --size: 64px;
+        --half-size: calc(var(--size) / 2);
+        --stroke-width: 2px;
+        --radius: calc((var(--size) - var(--stroke-width)) / 2);
+        --circumference: calc(var(--radius) * pi * 2);
+        --dash: calc((var(--progress) * var(--circumference)) / 100);
+        animation: progress-animation 1s linear;
+        circle {
+          cx: var(--half-size);
+          cy: var(--half-size);
+          r: var(--radius);
+          stroke-width: var(--stroke-width);
+          fill: none;
+          stroke-linecap: round;
+        }
 
-				circle.bg {
-					stroke: #ddd;
-				}
+        circle.bg {
+          stroke: #ddd;
+        }
 
-				circle.fg {
-					transform: rotate(-90deg);
-					transform-origin: var(--half-size) var(--half-size);
-					stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
-					transition: stroke-dasharray 0.3s linear 0s;
-					stroke: #5394fd;
-				}
-			}
+        circle.fg {
+          transform: rotate(-90deg);
+          transform-origin: var(--half-size) var(--half-size);
+          stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+          transition: stroke-dasharray 0.3s linear 0s;
+          stroke: #5394fd;
+        }
+      }
 
-			@property --progress {
-				syntax: "<number>";
-				inherits: false;
-				initial-value: 0;
-			}
+      @property --progress {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+      }
 
-			@keyframes progress-animation {
-				from {
-					--progress: 0;
-				}
-				to {
-					--progress: 100;
-				}
-			}
-			.icon-wrapper {
-				border-radius: 500px;
+      @keyframes progress-animation {
+        from {
+          --progress: 0;
+        }
+        to {
+          --progress: 100;
+        }
+      }
+      .icon-wrapper {
+        border-radius: 500px;
 
-				img {
-					filter: invert(0.5) sepia(0.75) saturate(5) hue-rotate(175deg);
-				}
-			}
-		}
+        img {
+          filter: invert(0.5) sepia(0.75) saturate(5) hue-rotate(175deg);
+        }
+      }
+    }
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
-	.slider-wrapper {
-		.slide-wrapper {
-			min-width: 20vw;
-		}
-	}
+  .slider-wrapper {
+    .slide-wrapper {
+      min-width: 20vw;
+    }
+  }
 }
